@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_login"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/metName"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/mtvSearch"
+                    android:background="@null"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="商品信息搜索"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/main_color"
+            android:orientation="vertical"></LinearLayout>
+
+        <fragment
+            android:id="@+id/fragment_soft_image"
+            android:name="com.clientBase.banner.CycleViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="120dip"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="-50dp" />
+
+        <com.clientBase.view.GridviewForScrollView
+            android:id="@+id/mBookType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:numColumns="4"></com.clientBase.view.GridviewForScrollView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp">
+
+
+            <com.clientBase.refresh.JellyRefreshLayout
+                android:id="@+id/jelly_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="4dp"
+                android:text="loading"
+                app:headerHeight="48dp"
+                app:jellyColor="@color/main_color"
+                app:pullHeight="160dp"
+
+                app:triggerHeight="108dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                  android:padding="15dp"
+                    android:text="推荐商品"
+                    android:textColor="#333"
+                    android:textStyle="bold"
+                    android:textSize="14dp" />
+
+                <com.clientBase.view.ListviewForScrollView
+                    android:id="@+id/mrecommendListMessage"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:divider="@color/bg_color_login"
+                    android:dividerHeight="1dp"
+                    android:listSelector="@drawable/listview"
+                    android:scrollbars="none"></com.clientBase.view.ListviewForScrollView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="15dp"
+                    android:text="常用药品"
+                    android:textColor="#333"
+                    android:textStyle="bold"
+                    android:textSize="14dp" />
+
+                <com.clientBase.view.ListviewForScrollView
+                    android:id="@+id/mNewsListMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:divider="@color/bg_color_login"
+                    android:dividerHeight="1dp"
+                    android:listSelector="@drawable/listview"
+                    android:scrollbars="none"></com.clientBase.view.ListviewForScrollView>
+                </LinearLayout>
+
+                </ScrollView>
+            </com.clientBase.refresh.JellyRefreshLayout>
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/mviCreateMessage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/icon_message_logo"
+            android:visibility="gone" />
+
+
+        <ListView
+            android:id="@+id/msearchListMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp"
+            android:background="#ffffff"
+            android:divider="@color/bg_color_login"
+            android:dividerHeight="1dp"
+            android:listSelector="@drawable/listview"
+            android:scrollbars="none"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/mviTongJi"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/icon_yuan"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+</RelativeLayout>
